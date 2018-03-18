@@ -6,7 +6,7 @@ db = MySQLdb.connect(host="localhost",    # tu host, usualmente localhost
                      passwd="1709",       # tu password
                      db="SII_2018")       # el nombre de la base de datos
 cursor = db.cursor()
-mi_query = "SELECT * FROM IDENTIFICACION_DE_VEHICULO"
+mi_query = "SELECT * FROM IDEN_VEHI"
 cursor.execute(mi_query)
 cursor.fetchall()
 i = 0
@@ -31,7 +31,7 @@ with open('liv2018xls.csv') as File:
 		tas_2018 = int(particion[10])
 		perm_2018 = int(particion[11])
 		i = i +1
-		sql = "INSERT INTO IDENTIFICACION_DE_VEHICULO (vehiculoID,codigo,ano,tipo,marca,modelo_raw,modelo,version,ptas,cilindr,comb,trans,equip,tas_2018,perm_2018) VALUES (%d, %s, %d, %s, %s, %s, %s, %s, %d, %d,  %s, %s, %s, %d, %d)"
+		sql = "INSERT INTO IDEN_VEHI (vehiculoID,codigo,ano,tipo,marca,modelo_raw,modelo,version,ptas,cilindr,comb,trans,equip,tas_2018,perm_2018) VALUES (%d, %s, %d, %s, %s, %s, %s, %s, %d, %d,  %s, %s, %s, %d, %d)"
 		print(sql)
 		registro = (vehiculoID,codigo,ano,tipo,marca,modelo_raw,modelo,version,ptas,cilindr,comb,trans,equip,tas_2018,perm_2018)
 		print(registro)

@@ -3,7 +3,7 @@ CREATE DATABASE SII_2018;
 -- USO DE BASE DE DATOS SII_2018
 USE SII_2018; 
 -- Creacion de tabla para sii_2018
-CREATE TABLE `IDENTIFICACION_DE_VEHICULO` (
+CREATE TABLE `IDEN_VEHI` (
     `vehiculoID` int  NOT NULL ,
     `codigo` varchar(7)  NOT NULL ,
     `ano` int  NOT NULL ,
