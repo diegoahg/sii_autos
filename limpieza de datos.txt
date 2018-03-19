@@ -1,0 +1,12 @@
+#descargar xlsx de la siguiente pagina
+http://www.sii.cl/servicios_online/1049-2607.html
+
+#descomprimir por archivo 
+unzip liv2018xlsx.zip
+
+#transformar a csv
+xlsx2csv liv2018xls.xlsx > liv2018xls.csv
+
+#con nano reemplazar ',' por ';'
+
+#borrar las primeras lineas basura
