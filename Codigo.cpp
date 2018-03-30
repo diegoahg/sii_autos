@@ -38,24 +38,21 @@ void split(string Linea, char Separador, vector<string> &TempBuff, int &TotalVec
 }
 int main(){
 
-    mysqlpp::Connection conn(false);
-       char db[]     = "SII_2018";
-       char server[] = "localhost";
-       char user[]   = "r0bert01de";
-       char pass[]   = "1709";
+  mysqlpp::Connection conn(false);
+      char db[]     = "SII_2018";
+      char server[] = "localhost";
+      char user[]   = "r0bert01de";
+      char pass[]   = "1709";
 
-    int j = 0, i = 0, k = 0;
-    fstream fichero;
-    string linea;
-    vector<string> TempBuff(0);
-    int TotalVector;
-    fichero.open("liv2018xls.csv",ios::in);
-    getline(fichero,linea);
-    while (!fichero.eof()) {
+  int j = 0, i = 0, k = 0,TotalVector;
+  fstream fichero;
+  string linea;
+  vector<string> TempBuff(0);
+  fichero.open("liv2018xls.csv",ios::in);
+  getline(fichero,linea);
+  while (!fichero.eof()) {
     split(linea, *";", TempBuff, TotalVector);
-       if(TempBuff[2]!="MOTO"){
-         // llenar BASE DE DATOS
-         //string res = TempBuff[2];
+      if(TempBuff[2]!="MOTO"){
         if (conn.connect(NULL, server, user, pass)){
           string consulta="USE SII_2010";
           Query query = conn.query(consulta);
@@ -85,10 +82,10 @@ int main(){
           k++;
         j++;
       }
-      getline(fichero,linea);
-     }
-     cout << TotalVector << endl;
-     cout << "motos: " << j << endl;
-     cout << "otros: " << i << endl;
-     cout << "revisar: " << k << endl;
+    getline(fichero,linea);
+  }
+  cout << TotalVector << endl;
+  cout << "motos: " << j << endl;
+  cout << "otros: " << i << endl;
+  cout << "revisar: " << k << endl;
 }
